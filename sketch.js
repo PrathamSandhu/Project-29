@@ -113,14 +113,16 @@ function draw() {
   fill("pink");
   block25.display();
 
-  ellipse(polygon.position.x, polygon.position.y, 20);
+  //ellipse(polygon.position.x, polygon.position.y, 20);
+  imageMode(CENTER);
+  image(polygon_img, polygon.position.x, polygon.position.y, 20, 20);
   slingShot.display();
 
 
 }
 function mouseDragged(){
-  matter.Body.setPosition(this.ball,{x:mouseX,y:mouseY});
+  Matter.Body.setPosition(this.polygon,{x:mouseX,y:mouseY});
 }
 function mouseReleased(){
-  //slingShot.fly();
+  slingShot.fly();
 }
